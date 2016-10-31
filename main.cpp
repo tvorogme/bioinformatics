@@ -4,9 +4,11 @@
 #include <map>
 #include <set>
 #include <cmath>
+#include <set>
 
 using namespace std;
 vector<pair<string, string> > in_vec;
+vector<pair<int, string> > out_vecc;
 set<int> whole_vgenes;
 
 vector<int> n_plet(string in, int n) {
@@ -54,6 +56,7 @@ vector<int> n_plet(string in, int n) {
 
 int main() {
     ifstream f1("IGHV-exp5.v2.fa");
+    ifstream f2("SRR062635_1.filt.fastq");
 
     string current_name;
     string current_seq;
@@ -85,6 +88,15 @@ int main() {
         }
     }
 
-    cout << whole_vgenes.size() << endl;
+    while (f2){
+        string first, second, third, fourth;
+        getline(f2, first);
+        getline(f2, second);
+        getline(f2, third);
+        getline(f2, fourth);
+
+        set<int> now = n_plet(second, 10);
+        out_vecc.insert(make_pair((whole_vgenes & now).size(), first));
+    }
     return 0;
 }
