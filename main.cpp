@@ -5,6 +5,7 @@
 #include <set>
 #include <cmath>
 #include <set>
+#include <algorithm>
 
 using namespace std;
 vector <pair<string, string>> in_vec;
@@ -12,18 +13,18 @@ vector <pair<int, string>> out_vecc;
 set<int> whole_vgenes;
 
 
-vector<int> intersection(set<int> first, set<int> second) {
-    vactor<int> answer;
+vector<int> intersection(set<int> first, vector<int> second) {
+    vector<int> answer;
 
     if (min(first.size(), second.size()) == second.size()) {
         for (auto p: second) {
-            if (second.find(p) != second.end()) {
+            if (std::find(second.begin(), second.end(), p) != second.end()) {
                 answer.push_back(p);
             }
         }
     } else {
         for (auto p: first) {
-            if (first.find(p) != first.end()) {
+            if (std::find(first.begin(), first.end(), p) != first.end()) {
                 answer.push_back(p);
             }
         }
@@ -116,8 +117,10 @@ int main() {
         getline(f2, third);
         getline(f2, fourth);
 
-        set<int> now = n_plet(second, 10);
-        out_vecc.insert(make_pair(intersection(whole_vgenes,now).size(), first));
+        vector<int> now = n_plet(second, 10);
+        out_vecc.push_back(make_pair(intersection(whole_vgenes,now).size(), first));
     }
+
+    cout << out_vecc.size() << endl;
     return 0;
 }
