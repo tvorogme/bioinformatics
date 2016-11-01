@@ -114,6 +114,7 @@ int main() {
 
     while (f2) {
         cout << "\r" << a;
+        a++;
         string first, second, third, fourth;
         getline(f2, first);
         getline(f2, second);
