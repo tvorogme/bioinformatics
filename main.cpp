@@ -7,9 +7,30 @@
 #include <set>
 
 using namespace std;
-vector<pair<string, string> > in_vec;
-vector<pair<int, string> > out_vecc;
+vector <pair<string, string>> in_vec;
+vector <pair<int, string>> out_vecc;
 set<int> whole_vgenes;
+
+
+vector<int> intersection(vector<int> first, vector<int> second) {
+    vactor<int> answer;
+
+    if (min(first.size(), second.size()) == second.size()) {
+        for (auto p: second) {
+            if (second.find(p) != second.end()) {
+                answer.push_back(p);
+            }
+        }
+    } else {
+        for (auto p: first) {
+            if (first.find(p) != first.end()) {
+                answer.push_back(p);
+            }
+        }
+    }
+
+    return answer;
+}
 
 vector<int> n_plet(string in, int n) {
     vector<int> in_vec;
@@ -46,7 +67,7 @@ vector<int> n_plet(string in, int n) {
     out_vec.push_back(answer);
 
     for (int i = n; i < in_vec.size(); ++i) {
-        int now_answer = (out_vec[now_element] % int(pow(4, n - 1)))  + in_vec[i];
+        int now_answer = (out_vec[now_element] % int(pow(4, n - 1))) + in_vec[i];
         out_vec.push_back(now_answer);
         now_element++;
     }
@@ -88,7 +109,7 @@ int main() {
         }
     }
 
-    while (f2){
+    while (f2) {
         string first, second, third, fourth;
         getline(f2, first);
         getline(f2, second);
@@ -96,7 +117,7 @@ int main() {
         getline(f2, fourth);
 
         set<int> now = n_plet(second, 10);
-        out_vecc.insert(make_pair((whole_vgenes & now).size(), first));
+        out_vecc.insert(make_pair(intersection(whole_vgenes,now).size(), first));
     }
     return 0;
 }
