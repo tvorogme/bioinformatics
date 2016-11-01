@@ -110,7 +110,10 @@ int main() {
         }
     }
 
+    int a = 0;
+
     while (f2) {
+        cout << "\r" << a;
         string first, second, third, fourth;
         getline(f2, first);
         getline(f2, second);
