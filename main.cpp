@@ -12,7 +12,7 @@ vector <pair<int, string>> out_vecc;
 set<int> whole_vgenes;
 
 
-vector<int> intersection(vector<int> first, vector<int> second) {
+vector<int> intersection(set<int> first, set<int> second) {
     vactor<int> answer;
 
     if (min(first.size(), second.size()) == second.size()) {
