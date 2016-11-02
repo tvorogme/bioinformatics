@@ -13,27 +13,19 @@ vector <pair<int, string>> out_vecc;
 set<int> whole_vgenes;
 
 
-vector<int> intersection(set<int> first, vector<int> second) {
-    vector<int> answer;
+int intersection(set<int> const& first, vector<int> const& second) {
+    int answer = 0;
 
-    if (min(first.size(), second.size()) == second.size()) {
-        for (auto p: second) {
-            if (std::find(second.begin(), second.end(), p) != second.end()) {
-                answer.push_back(p);
-            }
-        }
-    } else {
-        for (auto p: first) {
-            if (std::find(first.begin(), first.end(), p) != first.end()) {
-                answer.push_back(p);
-            }
+    for (auto p: second){
+        if (find(first.begin(), first.end(), p) != first.end()){
+            answer++;
         }
     }
 
     return answer;
 }
 
-vector<int> n_plet(string in, int n) {
+vector<int> n_plet(string const& in, int n) {
     vector<int> in_vec;
     vector<int> out_vec;
     int now_element = 0;
@@ -122,7 +114,7 @@ int main() {
         getline(f2, fourth);
 
         vector<int> now = n_plet(second, 10);
-        out_vecc.push_back(make_pair(intersection(whole_vgenes,now).size(), first));
+        out_vecc.push_back(make_pair(intersection(whole_vgenes,now), first));
     }
 
     cout << out_vecc.size() << endl;
