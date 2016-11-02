@@ -118,5 +118,9 @@ int main() {
 
 
     cout << "\n" << "=============================" << "\n" << out_vecc.size() << endl;
+    cout << "\n";
+    for (auto p: out_vecc){
+        cout << p.first << " " << p.second;
+    }
     return 0;
 }
