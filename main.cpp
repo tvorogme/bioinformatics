@@ -116,6 +116,7 @@ int main() {
         out_vecc.push_back(make_pair(intersection(whole_vgenes,now), first));
     }
 
-    cout << out_vecc.size() << endl;
+
+    cout << "\n" << "=============================" << "\n" << out_vecc.size() << endl;
     return 0;
 }
