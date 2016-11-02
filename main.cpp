@@ -112,6 +112,8 @@ int main() {
         getline(cin, third);
         getline(cin, fourth);
 
+        cout << first << "\n" << second << "\n" << third << "\n" << fourth << "\n";
+
         vector<int> now = n_plet(second, 10);
         out_vecc.push_back(make_pair(intersection(whole_vgenes,now), first));
     }
