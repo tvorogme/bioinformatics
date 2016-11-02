@@ -114,19 +114,12 @@ int main() {
         getline(cin, third);
         getline(cin, fourth);
 
-        cout << "===========+++++++++++++============\n" << first << "\n" << second << "\n" << third << "\n" << fourth << "=========+++++++++++++++++===================" << endl;
-
         vector<int> now = n_plet(second, 10);
         out_vecc.push_back(make_pair(intersection(whole_vgenes,now), first));
     }
 
-
-    cout << "\n" << "=============================" << "\n" << out_vecc.size() << endl;
-    cout << "\n";
     for (auto p: out_vecc){
-        cout << "------------" << "\n";
-        cout << p.first << " " << p.second;
-        cout << "------------" << "\n\n\n";
+        cout << p.first << "\t" << p.second << "\n";
     }
     return 0;
 }
