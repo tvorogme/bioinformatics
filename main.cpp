@@ -70,7 +70,6 @@ vector<int> n_plet(string const& in, int n) {
 
 int main() {
     ifstream f1("IGHV-exp5.v2.fa");
-    ifstream f2("SRR062635_1.filt.fastq");
 
     string current_name;
     string current_seq;
@@ -104,14 +103,14 @@ int main() {
 
     int a = 0;
 
-    while (f2) {
+    while (cin) {
         cout << "\r" << a;
         a++;
         string first, second, third, fourth;
-        getline(f2, first);
-        getline(f2, second);
-        getline(f2, third);
-        getline(f2, fourth);
+        getline(cin, first);
+        getline(cin, second);
+        getline(cin, third);
+        getline(cin, fourth);
 
         vector<int> now = n_plet(second, 10);
         out_vecc.push_back(make_pair(intersection(whole_vgenes,now), first));
