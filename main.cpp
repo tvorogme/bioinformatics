@@ -103,11 +103,11 @@ int main() {
 
     int a = 0;
 
+    string first, second, third, fourth;
+
     while (cin) {
         cout << "\r" << a;
         a++;
-        string first, second, third, fourth;
-
 
         getline(cin, first);
         getline(cin, second);
@@ -117,7 +117,7 @@ int main() {
         cout << "===========+++++++++++++============\n" << first << "\n" << second << "\n" << third << "\n" << fourth << "=========+++++++++++++++++===================" << endl;
 
         vector<int> now = n_plet(second, 10);
-        out_vecc.push_back(make_pair(intersection(whole_vgenes,now), third));
+        out_vecc.push_back(make_pair(intersection(whole_vgenes,now), first));
     }
 
 
