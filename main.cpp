@@ -106,7 +106,6 @@ int main() {
     string first, second, third, fourth;
 
     while (cin) {
-        cout << "\r" << a;
         a++;
 
         getline(cin, first);
