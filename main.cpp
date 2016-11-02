@@ -17,7 +17,7 @@ int intersection(set<int> const& first, vector<int> const& second) {
     int answer = 0;
 
     for (auto p: second){
-        if (find(first.begin(), first.end(), p) != first.end()){
+        if (first.find(p) != first.end()){
             answer++;
         }
     }
