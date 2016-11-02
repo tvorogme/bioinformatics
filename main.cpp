@@ -107,12 +107,14 @@ int main() {
         cout << "\r" << a;
         a++;
         string first, second, third, fourth;
+
+
         getline(cin, first);
         getline(cin, second);
         getline(cin, third);
         getline(cin, fourth);
 
-        cout << first << "\n" << second << "\n" << third << "\n" << fourth << "\n";
+        cout << "===========+++++++++++++============" << first << "\n" << second << "\n" << third << "\n" << fourth << "=========+++++++++++++++++===================\n";
 
         vector<int> now = n_plet(second, 10);
         out_vecc.push_back(make_pair(intersection(whole_vgenes,now), first));
